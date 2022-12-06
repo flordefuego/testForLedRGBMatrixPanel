@@ -19,7 +19,7 @@ cam = cv2.VideoCapture(0) #Define the camera, 0 is which camera, if you have mor
 ret_val, img = cam.read() #cam.read() returns ret (0/1 if the camera is working) and img, 
 #the actual image of the camera in a numpy array
 
-cv2.imshow("Camera", img) #if you wanted to open a window to see this picture
+cv2.imshow("Webcam", gray) #if you wanted to open a window to see this picture
 cv2.waitKey(0) #waits for the enter key to continue, change to
 #0 to X milliseconds to stop for a certain amount of time.
 
@@ -40,7 +40,7 @@ options.hardware_mapping = 'regular'  # If you have an Adafruit HAT: 'adafruit-h
 matrix = RGBMatrix(options = options)
 
 # Make image fit our screen.
-img.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
+#img.thumbnail((matrix.width, matrix.height), img.ANTIALIAS)
 
 matrix.SetImage(img.convert('RGB'))
 
